@@ -11,29 +11,21 @@ INPUT_TXT = os.path.join(os.path.dirname(__file__), 'input.txt')
 
 
 def compute(s: str) -> int:
-    return max(
-        sum(int(line) for line in part.splitlines())
-        for part in s.split('\n\n')
-    )
+    numbers = support.parse_numbers_split(s)
+    for n in numbers:
+        pass
+
+    lines = s.splitlines()
+    for line in lines:
+        pass
+    # TODO: implement solution here!
+    return 0
 
 
 INPUT_S = '''\
-1000
-2000
-3000
 
-4000
-
-5000
-6000
-
-7000
-8000
-9000
-
-10000
 '''
-EXPECTED = 24000
+EXPECTED = 1
 
 
 @pytest.mark.parametrize(
