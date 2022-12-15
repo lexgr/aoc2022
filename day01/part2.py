@@ -17,7 +17,8 @@ def compute(s: str) -> int:
         for calories in calories_per_elf.splitlines():
             sum_elf += int(calories)
         sum_per_elf.append(sum_elf)
-    return max(sum_per_elf)
+    sum_per_elf.sort()
+    return sum(sum_per_elf[-3:])
 
 INPUT_S = '''\
 1000
@@ -35,7 +36,7 @@ INPUT_S = '''\
 
 10000
 '''
-EXPECTED = 24000
+EXPECTED = 45000
 
 
 @pytest.mark.parametrize(
